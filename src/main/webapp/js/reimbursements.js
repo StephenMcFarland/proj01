@@ -1,34 +1,32 @@
 /**
  * 
  */
-window.alert('hello world');
-const reimbursement = (reims,root)=>{
-root.innerHTML='';
-reims.forEach(reim =>{
-const r =document.createElement('li');
-r.classList.add('list-item');
-r.setAttribute('data-id',reim.id);
-r.innerText=`${reim.description}---${riem.amount}`;
-root.appendChild(r);
-})
-}
 
-const noContent = (message, root) =>{
-root.innerHTML = '';
-const element = document.createElement('p');
-p.classList.add('error','no-content');
-p.innerHTML = message;
-root.appendChild(p);
-}
-//
+
+
+
+
+
 document.addEventListener('DOMContentLoaded', async()=>{
 const listRoot = document.querySelector('#reimbursements');
-const reimsResp = await fetch('http://localhost:8080/Proj01/getReims');
+const reimsResp = await fetch('http://localhost:8080/ReimbursementSystem/getReims');
 const reims = await reimsResp.json();
 console.log(reims);
-if(reims.length){
-reimbursementsList(reims,listRoot);
-}else{
-	noContent('Employee has not submitted any reimbursements yet', listRoot);
-	}
+
+document.getElementById("keys").innerHTML = `<div class='reimbursement'><span class='reimId'>id</span><span class='owner'> Owner</span><span class='resolver'> Resolver</span><span class='reimAmount'> Amount</span><span class='status'> Status</span></div>`;
+
+var Container = document.getElementById("reims");
+
+reims.forEach(reim =>{
+var div = document.createElement("div");
+div.classList.add('reimbursement');
+div.innerHTML = `<span class='reimId'>${reim.reimId}</span><span class='owner'> ${reim.reimOwner} </span><span class='resolver'>  ${reim.reimResolver} </span><span> <span class='reimAmount'>$${reim.reimAmount}</span> <span class='status'> ${reim.reimStatus} </span>`;
+Container.appendChild(div);
+
+
+})
+
+	
+
 	})
+	

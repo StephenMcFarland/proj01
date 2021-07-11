@@ -1,0 +1,23 @@
+@charset "ISO-8859-1";
+
+
+body {
+	
+	background-color:aliceblue;
+}
+a{
+	text-decoration:none;
+	font-family:verdana;
+	color: green;
+}
+a:hover{
+	text-decoration:underline;
+	color:#00ff40;
+}
+
+input{
+	margin:5px;
+}
+/* a:visited{
+	color:#999900;
+} */

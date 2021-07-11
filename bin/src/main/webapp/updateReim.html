@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Manager change reimbursement status</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a href='index.html'>Back</a><br>
+
+
+	<form method="get" action="updateReim">
+		Enter reim_id: <input name="id" /> <br/> 
+		<!-- Enter Owner Name: <input name="owner" /> <br/> 
+		
+		Enter Amount: <input name="amount" /> <br/>  -->
+		
+		<label>Status:</label>
+
+<select name="status" id="status">
+  <option value="pending">pending</option>
+  <option value="approved">approved</option>
+  <option value="denied">denied</option>
+  <option value="resolved">resolved</option>
+</select>
+		<input type="submit" value="Update Reimbursement">
+	</form>
+</body>
+</html>

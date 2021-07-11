@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>Proj01</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <servlet-name>Demo</servlet-name>
+    <servlet-class>Demo</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Demo</servlet-name>
+    <url-pattern>/Demo</url-pattern>
+    <url-pattern>/home</url-pattern>
+    <url-pattern>/testurlmap</url-pattern>
+    <url-pattern>/another</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>DeleteServlet</servlet-name>
+    <servlet-class>DeleteServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>DeleteServlet</servlet-name>
+    <url-pattern>/delete</url-pattern>
+</servlet-mapping>
+  <servlet>
+    <servlet-name>TargetServlet</servlet-name>
+    <servlet-class>TargetServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>TargetServlet</servlet-name>
+    <url-pattern>/targetServlet</url-pattern>
+</servlet-mapping>
+<servlet>
+    <servlet-name>SourceServlet</servlet-name>
+    <servlet-class>SourceServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>SourceServlet</servlet-name>
+    <url-pattern>/sourceServlet</url-pattern>
+</servlet-mapping>
+  <servlet>
+    <servlet-name>AddServlet</servlet-name>
+    <servlet-class>AddServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>AddServlet</servlet-name>
+    <url-pattern>/add</url-pattern>
+</servlet-mapping>
+<servlet>
+    <servlet-name>UpdateServlet</servlet-name>
+    <servlet-class>UpdateServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>UpdateServlet</servlet-name>
+    <url-pattern>/update</url-pattern>
+</servlet-mapping>
+<servlet>
+  <servlet-name>ReimAddServlet</servlet-name>
+    <servlet-class>ReimAddServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>ReimAddServlet</servlet-name>
+    <url-pattern>/addReim</url-pattern>
+</servlet-mapping>
+<servlet>
+  <servlet-name>GetEmpServlet</servlet-name>
+    <servlet-class>GetEmpServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>GetEmpServlet</servlet-name>
+    <url-pattern>/getEmp</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+  <servlet-name>ReimViewPendServlet</servlet-name>
+    <servlet-class>ReimViewPendServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>ReimViewPendServlet</servlet-name>
+    <url-pattern>/getPend</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>ReimUpdateServlet</servlet-name>
+    <servlet-class>ReimUpdateServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>ReimUpdateServlet</servlet-name>
+    <url-pattern>/updateReim</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>ReimEmpResServlet</servlet-name>
+    <servlet-class>ReimEmpResServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>ReimEmpResServlet</servlet-name>
+    <url-pattern>/getEmpRes</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>ReimEmpPendServlet</servlet-name>
+    <servlet-class>ReimEmpPendServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>ReimEmpPendServlet</servlet-name>
+    <url-pattern>/getEmpPend</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+  <servlet-name>ReimGetReimsServlet</servlet-name>
+    <servlet-class>ReimGetReimsServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>ReimGetReimsServlet</servlet-name>
+    <url-pattern>/getReims</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <servlet-name>ReimGetReimsByEmpServlet</servlet-name>
+    <servlet-class>ReimGetReimsByEmpServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>ReimGetReimsByEmpServlet</servlet-name>
+    <url-pattern>/getReimsByEmp</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
+  <servlet-name>LogoutEmpServlet</servlet-name>
+    <servlet-class>LogoutServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>LogoutServlet</servlet-name>
+    <url-pattern>/logout</url-pattern>
+</servlet-mapping>
+
+
+</web-app>

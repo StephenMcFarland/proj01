@@ -35,13 +35,13 @@ public class ReimGetReimsServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		ReimGetReimsServlet app = new ReimGetReimsServlet();
-		//List<Reimbursement> reimbursements = app.reimbursementService.getReimsAll();
+		List<Reimbursement> reimbursements = app.reimbursementService.getReimsAll();
 
 
 		response.setStatus(200);
 		response.setContentType("application/json");
 		PrintWriter out =response.getWriter();
-		out.write(new ObjectMapper().writeValueAsString(new ArrayList<Reimbursement>(Arrays.asList(new Reimbursement(33,"reimOwner","reimResolver",44.50,"reimStatus")))));
+		out.write(new ObjectMapper().writeValueAsString(reimbursements));
 
 
 //
