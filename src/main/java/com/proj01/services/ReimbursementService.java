@@ -58,7 +58,7 @@ public class ReimbursementService implements ReimRepository<Reimbursement, Integ
 	        String sql = "";
 	        List<Reimbursement> reimbursements = null;
 	        try(Connection connection = connector.getConnection("user1", "user1", "jdbc:postgresql://localhost:5432/postgres")) {
-	            sql = "SELECT * from REIMBURSEMENT WHERE reimOwner = '"+Owner+"'";
+	            sql = "SELECT * from REIMBURSEMENT WHERE reimOwner = '"+Owner+"' ORDER BY REIM_ID";
 	            PreparedStatement ps = connection.prepareStatement(sql);
 	            ResultSet rs = ps.executeQuery();
 
@@ -152,7 +152,7 @@ public class ReimbursementService implements ReimRepository<Reimbursement, Integ
 	        String sql = "";
 	        List<Reimbursement> reimbursements = null;
 	        try(Connection connection = connector.getConnection("user1", "user1", "jdbc:postgresql://localhost:5432/postgres")) {
-	            sql = "SELECT * from REIMBURSEMENT WHERE reimStatus = 'pending' ";
+	            sql = "SELECT * from REIMBURSEMENT WHERE reimStatus = 'pending' ORDER BY REIM_ID";
 	            PreparedStatement ps = connection.prepareStatement(sql);
 	            ResultSet rs = ps.executeQuery();
 
