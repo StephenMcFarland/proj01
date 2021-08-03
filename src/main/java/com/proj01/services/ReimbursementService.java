@@ -119,7 +119,7 @@ public class ReimbursementService implements ReimRepository<Reimbursement, Integ
 		        String sql = "";
 		        List<Reimbursement> reimbursements = null;
 		        try(Connection connection = connector.getConnection("user1", "user1", "jdbc:postgresql://localhost:5432/postgres")) {
-		            sql = "SELECT * from REIMBURSEMENT";
+		            sql = "SELECT * from REIMBURSEMENT ORDER BY REIM_ID DESC";
 		            PreparedStatement ps = connection.prepareStatement(sql);
 		            ResultSet rs = ps.executeQuery();
 
