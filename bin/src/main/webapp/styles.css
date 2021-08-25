@@ -5,7 +5,7 @@ body {
 	
 	background-color:aliceblue;
 }
-a{
+a, li, ul, h2, h4, td{
 	text-decoration:none;
 	font-family:verdana;
 	color: green;
@@ -18,6 +18,55 @@ a:hover{
 input{
 	margin:5px;
 }
+
+.reimbursement {
+	
+	padding:14px;
+	margin:6px;
+	background-color:#fff;
+	font-family:verdana;
+	width:80%;
+	border-radius:5px;
+}
 /* a:visited{
 	color:#999900;
 } */
+
+.owner{
+	
+	background-color:#f7ddf5;
+	padding:5px;
+	margin:2px;
+	border-radius:5px;
+	
+}
+.resolver{
+	
+	background-color:#79bcff;
+	padding:5px;
+	margin:2px;
+	border-radius:5px;
+	
+}
+.status{
+	
+	background-color:#ffff04;
+	padding:5px;
+	margin:2px;
+	border-radius:5px;
+	
+}
+.reimAmount{
+	background-color:#33FF0F;
+	padding:8px;
+	margin: 5px;
+	border-radius:2px;
+	color:#fff;
+	font-weight:bolder;
+}
+.reimId{
+	background-color:#ff9999;
+	padding:5px;
+	margin:2px;
+	border-radius:5px;
+}

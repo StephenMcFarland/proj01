@@ -119,7 +119,7 @@ public class ReimbursementService implements ReimRepository<Reimbursement, Integ
 		        String sql = "";
 		        List<Reimbursement> reimbursements = null;
 		        try(Connection connection = connector.getConnection("user1", "user1", "jdbc:postgresql://localhost:5432/postgres")) {
-		            sql = "SELECT * from REIMBURSEMENT";
+		            sql = "SELECT * from REIMBURSEMENT ORDER BY reim_id";
 		            PreparedStatement ps = connection.prepareStatement(sql);
 		            ResultSet rs = ps.executeQuery();
 
@@ -198,12 +198,14 @@ public class ReimbursementService implements ReimRepository<Reimbursement, Integ
 
 
 	    @Override
-	    public void saveReim(int reim_id,String reimOwner, String reimResolver,double reimAmount,String reimStatus) {
+	    public void saveReim(String reimOwner, String reimResolver,double reimAmount,String reimStatus) {
+	    //public void saveReim(int reim_id,String reimOwner, String reimResolver,double reimAmount,String reimStatus) {
 	        String sql = "";
 
 	        try(Connection connection = connector.getConnection("user1", "user1", "jdbc:postgresql://localhost:5432/postgres")) {
 
-	        	sql = "INSERT INTO reimbursement VALUES ('"+reim_id+"','"+reimOwner+"','','"+reimAmount+"','pending')";
+	        	sql = "INSERT INTO reimbursement VALUES (DEFAULT,'"+reimOwner+"','','"+reimAmount+"','pending')";
+	        	//sql = "INSERT INTO reimbursement VALUES ('"+reim_id+"','"+reimOwner+"','','"+reimAmount+"','pending')";
 
 	            PreparedStatement ps = connection.prepareStatement(sql);
 	            ps.executeQuery();

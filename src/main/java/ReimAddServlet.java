@@ -37,13 +37,13 @@ public class ReimAddServlet extends HttpServlet {
 
 
 
-		int reim_id = Integer.parseInt(request.getParameter("id"));
+		//int reim_id = Integer.parseInt(request.getParameter("id"));
 		String reimOwner = username;//request.getParameter("owner");
 		//String reimResolver = request.getParameter("resolver");
 		double reimAmount = Double.parseDouble(request.getParameter("amount"));
 		String reimStatus = request.getParameter("status");
-		app.reimbursementService.saveReim(reim_id, reimOwner, "", reimAmount, reimStatus);
-
+		app.reimbursementService.saveReim(reimOwner, "", reimAmount, reimStatus);
+		//app.reimbursementService.saveReim(reim_id, reimOwner, "", reimAmount, reimStatus);
 
 	response.setContentType("text/html");
 	PrintWriter out = response.getWriter();

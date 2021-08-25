@@ -10,7 +10,8 @@ public interface ReimRepository <T, ID>{
 	List<T> getEmpPendAll(String reimOwner);
 	List<T> getEmpResAll(String reimOwner);
 	List<T> getReimsByEmpAll(String Owner);
-	void saveReim(int reim_id,String reimOwner,String reimResolver,double reimAmount,String reimStatus);
+	void saveReim(String reimOwner,String reimResolver,double reimAmount,String reimStatus);
+	//void saveReim(int reim_id,String reimOwner,String reimResolver,double reimAmount,String reimStatus);
 	void reimUpdate(int reim_id, String reimResolver, String reimStatus);
 
 

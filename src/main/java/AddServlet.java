@@ -29,13 +29,13 @@ public class AddServlet extends HttpServlet {
 
 		AddServlet app = new AddServlet();
 
-		int user_id = Integer.parseInt(request.getParameter("id"));
+		//int user_id = Integer.parseInt(request.getParameter("id"));
 		String empName = request.getParameter("empName");
 		long empPhone = Long.parseLong(request.getParameter("empPhone"));
 		String empAddress = request.getParameter("empAddress");
 		String email = request.getParameter("email");
-		app.employeeRepository.save(user_id, empName, empPhone, empAddress, email);
-
+		app.employeeRepository.save(empName, empPhone, empAddress, email);
+		//app.employeeRepository.save(user_id, empName, empPhone, empAddress, email);
 		response.setContentType("text/html");
 
 		PrintWriter out = response.getWriter();
