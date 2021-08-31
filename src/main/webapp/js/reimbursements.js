@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', async()=>{
 	reims.forEach(reim =>{
 		var div = document.createElement("div");
 		div.classList.add('reimbursement');
+		div.innerHTML = `<span class='reimId'>${reim.reimId}</span><span class='owner'> ${reim.reimOwner} </span><span class='resolver'>  ${reim.reimResolver} </span><span class='reimAmount'>$${reim.reimAmount}</span> <span class='status'> ${reim.reimStatus} </span>`;
 		Container.appendChild(div);
 })
 	})
