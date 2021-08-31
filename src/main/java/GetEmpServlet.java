@@ -64,7 +64,6 @@ public class GetEmpServlet extends HttpServlet {
 		out.println("<table cellpadding='6'><tr><td></td><td>id</td><td>Name</td><td>Phone</td><td>Address</td><td>Email</td>");
 		for(Employee e : employees) {
 
-		out.println("<tr><td><b>Employee:</b></td><td bgcolor='#CCC'>"+e.getUserId()+"</td><td bgcolor='#FFF'>" +e.getEmpName()+"</td><td bgcolor='#FFF'>"+e.getEmpPhone()+"</td><td bgcolor='#FFF'>"+e.getEmpAddress()+"</td><td bgcolor='#FFF'>"+e.getEmail()+"</td></tr>");
 		out.println("<tr><td><b>Employee:</b></td><td bgcolor='#CCC'>"+e.getUserId()+"</td><td bgcolor='#FFF'>" +e.getEmpName()+"</td><td bgcolor='#FFF'>"+e.getEmpPhone()+"</td><td bgcolor='#FFF'>"+e.getEmpAddress()+"</td><td bgcolor='#FFF'>"+e.getEmail()+"</td><td><form method='get' action='delete'>"
 				+ "		<input style='visibility: hidden;' name='id' value='"+e.getUserId()+"'/>"
 				+ "		<input type='submit' value='Delete Employee'>"
