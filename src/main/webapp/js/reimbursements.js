@@ -7,12 +7,8 @@ document.addEventListener('DOMContentLoaded', async()=>{
 	reims.forEach(reim =>{
 		var div = document.createElement("div");
 		div.classList.add('reimbursement');
-		div.innerHTML = `<span class='reimId'>${reim.reimId}</span><span class='owner'> ${reim.reimOwner} </span><span class='resolver'>  ${reim.reimResolver} </span><span class='reimAmount'>$${reim.reimAmount}</span> <span class='status'> ${reim.reimStatus} </span><span>	<form method='get' action='updateReim'>
-		<input name='id' value='${reim.reimId}' style='visibility:hidden;'/><br>
-	
-		
-		<label>Update Status:</label>
-
+		div.innerHTML = `<span class='reimId'>${reim.reimId}</span><span class='owner'> ${reim.reimOwner} </span><span class='resolver'>  ${reim.reimResolver} </span><span class='reimAmount'>$${reim.reimAmount}</span> <span class='status'> ${reim.reimStatus}</span>	
+		<form method='get' action='updateReim'>
 <select name='status' id='status'>
   <option value='pending'>pending</option>
   <option value='approved'>approved</option>
@@ -20,7 +16,8 @@ document.addEventListener('DOMContentLoaded', async()=>{
   <option value='resolved'>resolved</option>
 </select>
 		<input type='submit' value='Update Reimbursement'>
-	</form></span>`;
+		<input name='id' value='${reim.reimId}' style='visibility:hidden;'/>
+	</form>`;
 		Container.appendChild(div);
 })
 	})

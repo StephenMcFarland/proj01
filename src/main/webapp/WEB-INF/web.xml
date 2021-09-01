@@ -80,6 +80,16 @@
 
 
 <servlet>
+  <servlet-name>GetEmpUpServlet</servlet-name>
+    <servlet-class>GetEmpUpServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+    <servlet-name>GetEmpUpServlet</servlet-name>
+    <url-pattern>/getEmpUp</url-pattern>
+</servlet-mapping>
+
+
+<servlet>
   <servlet-name>ReimViewPendServlet</servlet-name>
     <servlet-class>ReimViewPendServlet</servlet-class>
 </servlet>

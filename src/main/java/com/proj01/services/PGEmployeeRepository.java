@@ -45,6 +45,34 @@ public class PGEmployeeRepository implements Repository<Employee, Integer>{
 
         return employees; // employees is null here
     }
+    @Override
+    public List<Employee> getEmpUp(String email) {
+        String sql = "";
+        List<Employee> employee = null;
+        try(Connection connection = connector.getConnection("user1", "user1", "jdbc:postgresql://localhost:5432/postgres")) {
+            sql = "SELECT user_id, empName, empPhone, empAddress, email from EMPLOYEEs where email='"+email+"'";
+            PreparedStatement ps = connection.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+            employee = new ArrayList<>();
+            while(rs.next()) {
+                int id = rs.getInt("user_id");
+                String name = rs.getString("empName");
+                long phone = rs.getLong("empPhone");
+                String address = rs.getString("empAddress");
+                String email2 = rs.getString("email");
+                Employee e = new Employee(id, name, phone, address, email2);
+                employee.add(e);
+            }
+            return employee;
+
+
+        } catch(SQLException e) {
+            System.out.println("Failed to get employee " + e.getMessage());
+        }
+
+        return employee; // employees is null here
+    }
 
     @Override
     public List<Employee> getById(Integer id) {
