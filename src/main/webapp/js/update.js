@@ -2,12 +2,20 @@ document.addEventListener('DOMContentLoaded', async()=>{
 	const reimsResp = await fetch('http://localhost:8080/ReimbursementSystem/getEmpUp');
 	const reims = await reimsResp.json();
 	console.log(reims);
-	document.getElementById("fieldnames").innerHTML = `<div class='reimbursement'><span class='reimId'>id</span><span class='owner'> Name</span><span class='reimAmount'> Phone</span><span class='status'> Address</span><span class='status'> Email</span></div>`;
+	document.getElementById("fieldnames").innerHTML = ``;//<div class='reimbursement'><span class='reimId'>id</span><span class='owner'> Name</span><span class='reimAmount'> Phone</span><span class='status'> Address</span><span class='status'> Email</span></div>`;
 	var Container = document.getElementById("empdetails");
 	reims.forEach(emp =>{
 		var div = document.createElement("div");
 		div.classList.add('reimbursement');
-		div.innerHTML = `<span class='reimId'>${emp.userId}</span><span class='resolver'>  ${emp.empName} </span><span class=''>${emp.empPhone}</span> <span class=''> ${emp.empAddress}</span><span class=''> ${emp.email}</span>`;
+		div.innerHTML = `	<form method="get" action="update">
+		${emp.userId} <input name="id" value="${emp.userId}" style="visibility:hidden;"/> <br/> 
+		Name: <input name="empName" value="${emp.empName}"/> <br/> 
+		Phone: <input name="empPhone" value="${emp.empPhone}"/> <br/> 
+		Address: <input name="empAddress" value="${emp.empAddress}"/> <br/> 
+		Email: ${emp.email} <br/> 
+		
+		<input type="submit" value="Update">
+	</form>`;
 		Container.appendChild(div);
 })
 	})

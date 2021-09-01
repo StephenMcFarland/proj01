@@ -105,12 +105,12 @@ public class PGEmployeeRepository implements Repository<Employee, Integer>{
 
 
     @Override
-    public void update(int user_id,String empName,long empPhone,String empAddress,String email) {
+    public void update(int user_id,String empName,long empPhone,String empAddress) {
         String sql = "";
         //List<Employee> employees = null;
         try(Connection connection = connector.getConnection("user1", "user1", "jdbc:postgresql://localhost:5432/postgres")) {
             //sql = "SELECT user_id, empName, empPhone, empAddress, email from EMPLOYEE where user_id="+id;
-            sql = "UPDATE employees SET user_id = '"+user_id+"',empName = '"+empName+"', empPhone = '"+empPhone+"',empAddress = '"+empAddress+"' ,password = 'pw', email = '"+email+"' WHERE user_id="+user_id;
+            sql = "UPDATE employees SET empName = '"+empName+"', empPhone = '"+empPhone+"',empAddress = '"+empAddress+"' ,password = 'pw' WHERE user_id='"+user_id+"'";
 
             PreparedStatement ps = connection.prepareStatement(sql);
        		ps.executeQuery();

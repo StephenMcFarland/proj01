@@ -36,8 +36,8 @@ public class UpdateServlet extends HttpServlet {
 		String empName = request.getParameter("empName");
 		long empPhone = Long.parseLong(request.getParameter("empPhone"));
 		String empAddress = request.getParameter("empAddress");
-		String email = request.getParameter("email");
-		app.employeeRepository.update(user_id, empName, empPhone, empAddress, email);
+		//String email = request.getParameter("email");
+		app.employeeRepository.update(user_id, empName, empPhone, empAddress);
 
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
