@@ -5,7 +5,7 @@ body {
 	
 	background-color:aliceblue;
 }
-a, li, ul, h2, h4, td{
+a, li, ul, h2, h4, td, th{
 	text-decoration:none;
 	font-family:verdana;
 	color: #666;
@@ -22,12 +22,14 @@ a:hover{
 input{
 	margin:5px;
 }
-
+td{
+	border:1px solid #999;
+}
 .reimbursement {
 	
 	padding:10px;
 	margin:6px;
-	/* background-color:#fff; */
+	background-color:#fff; 
 	font-family:verdana;
 	border-radius:4px;
 	border:1px solid #666;
@@ -38,27 +40,55 @@ input{
 
 .owner{
 	
-	background-color:#ccc;
-	padding:5px;
+	background-color:#fff;
+		padding:5px;
 	margin:2px;
 	/* border-radius:5px; */
 	
 }
 .resolver{
 	
-	background-color:#ccc;
+	background-color:#fff;
 	padding:5px;
 	margin:2px;
 	/* border-radius:5px; */
 	
 }
-.status{
+ .status{
 	
-	background-color:#ffff04;
+	/* background-color:#ffff04; */
 	padding:5px;
-	margin:2px;
+	margin:8px;
 	border-radius:5px;
 	
+} 
+.status[data-status="approved"]:after {
+ content : "approved";
+ background-color : #33FF0F;
+ padding:5px;
+	margin:8px;
+	border-radius:5px;
+}
+.status[data-status="denied"]:after {
+ content : "denied";
+ background-color : #ff6262;
+ 	padding:5px;
+	margin:8px;
+	border-radius:5px;
+}
+.status[data-status="pending"]:after {
+ content : "pending";
+ background-color : #ffff04;
+ 	padding:5px;
+	margin:8px;
+	border-radius:5px;
+}
+.status[data-status="resolved"]:after {
+ content : "resolved";
+ background-color : #fff;
+ 	padding:5px;
+	margin:8px;
+	border-radius:5px;
 }
 .reimAmount{
 	background-color:#33FF0F;
