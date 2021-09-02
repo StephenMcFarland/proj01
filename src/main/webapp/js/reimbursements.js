@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', async()=>{
   <option value='denied'>denied</option>
   <option value='resolved'>resolved</option>
 </select>
-		<input type='submit' value='Update Reimbursement'>
+		<input type='submit' value='Update'>
 		<input name='id' value='${reim.reimId}' style='visibility:hidden;'/>
 	</form></td>`;
 		Container.appendChild(tr);
