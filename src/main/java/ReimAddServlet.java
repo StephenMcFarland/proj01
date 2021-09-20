@@ -45,9 +45,12 @@ public class ReimAddServlet extends HttpServlet {
 		app.reimbursementService.saveReim(reimOwner, "", reimAmount, reimStatus);
 		//app.reimbursementService.saveReim(reim_id, reimOwner, "", reimAmount, reimStatus);
 
-	response.setContentType("text/html");
-	PrintWriter out = response.getWriter();
-	out.println("<a href='index.html'>Back</a><br>");
+//	response.setContentType("text/html");
+//	PrintWriter out = response.getWriter();
+//	out.println("<a href='index.html'>Back</a><br>");
+	
+	response.sendRedirect("/ReimbursementSystem/index.html");
+	
 	//out.println(reimOwner+" "+username);
 //	out.println("<a href='targetServlet'>Click Here to get the UserName</a><br>");
 //	out.println("<a href='addReim.html'>Click Here to add Reimbursement</a><br>");

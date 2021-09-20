@@ -32,6 +32,9 @@ public class UpdateServlet extends HttpServlet {
 		// List<Employee> employees = app.employeeRepository.getAll();
 		// List<Employee> employees = app.employeeRepository.getById(2);
 		// app.employeeRepository.delete(6);
+		
+		
+		
 		int user_id = Integer.parseInt(request.getParameter("id"));
 		String empName = request.getParameter("empName");
 		long empPhone = Long.parseLong(request.getParameter("empPhone"));
@@ -39,9 +42,11 @@ public class UpdateServlet extends HttpServlet {
 		//String email = request.getParameter("email");
 		app.employeeRepository.update(user_id, empName, empPhone, empAddress);
 
-		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
-		out.println("<a href='index.html'>Back</a><br>");
+		response.sendRedirect("/ReimbursementSystem/index.html");
+		
+//		response.setContentType("text/html");
+//		PrintWriter out = response.getWriter();
+//		out.println("<a href='index.html'>Back</a><br>");
 
 	}
 

@@ -38,10 +38,10 @@ public class AddServlet extends HttpServlet {
 		//app.employeeRepository.save(user_id, empName, empPhone, empAddress, email);
 		response.setContentType("text/html");
 
-		PrintWriter out = response.getWriter();
-		out.println("<a href='index.html'>Back</a><br>");
+//		PrintWriter out = response.getWriter();
+//		out.println("<a href='index.html'>Back</a><br>");
 
-
+		response.sendRedirect("/ReimbursementSystem/index.html");
 	}
 
 	/**

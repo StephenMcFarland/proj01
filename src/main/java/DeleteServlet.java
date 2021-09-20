@@ -35,9 +35,10 @@ public class DeleteServlet extends HttpServlet {
 		app.employeeRepository.delete(user_id);
 
 
-		response.setContentType("text/html");
-		PrintWriter out = response.getWriter();
-		out.println("<a href='index.html'>Back</a><br>");
+//		response.setContentType("text/html");
+//		PrintWriter out = response.getWriter();
+//		out.println("<a href='index.html'>Back</a><br>");
+		response.sendRedirect("/ReimbursementSystem/index.html");
 	}
 
 	/**

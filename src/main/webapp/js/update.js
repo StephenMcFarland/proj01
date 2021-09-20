@@ -9,9 +9,9 @@ document.addEventListener('DOMContentLoaded', async()=>{
 		div.classList.add('reimbursement');
 		div.innerHTML = `	<form method="get" action="update">
 		${emp.userId} <input name="id" value="${emp.userId}" style="visibility:hidden;"/> <br/> 
-		Name: <input name="empName" value="${emp.empName}"/> <br/> 
-		Phone: <input name="empPhone" value="${emp.empPhone}"/> <br/> 
-		Address: <input name="empAddress" value="${emp.empAddress}"/> <br/> 
+		Name: <input name="empName" size='30' value="${emp.empName}"/> <br/> 
+		Phone: <input name="empPhone" size='15' value="${emp.empPhone}"/> <br/> 
+		Address: <input name="empAddress" size='35' value="${emp.empAddress}"/> <br/> 
 		Email: ${emp.email} <br/> 
 		
 		<input type="submit" value="Update">
