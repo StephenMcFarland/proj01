@@ -22,7 +22,7 @@ public class PGEmployeeRepository implements Repository<Employee, Integer>{
         String sql = "";
         List<Employee> employees = null;
         try(Connection connection = connector.getConnection("user1", "user1", "jdbc:postgresql://localhost:5432/postgres")) {
-            sql = "SELECT user_id, empName, empPhone, empAddress, email from EMPLOYEEs";
+            sql = "SELECT user_id, empName, empPhone, empAddress, email from EMPLOYEEs ORDER BY user_id";
             PreparedStatement ps = connection.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
 
