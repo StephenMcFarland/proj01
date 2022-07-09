@@ -3,9 +3,7 @@ document.addEventListener('DOMContentLoaded', async()=>{
 	
 	const reims = await reimsResp.json();
 	console.log(reims);
-	if(jQuery.isEmptyObject(reimsResp)){
-		document.getElementById("sandbox").innerHTML = `${reims}${reimsResp} Must register in order to change employee details`;
-	}
+	
 	document.getElementById("fieldnames").innerHTML = ``;//<div class='reimbursement'><span class='reimId'>id</span><span class='owner'> Name</span><span class='reimAmount'> Phone</span><span class='status'> Address</span><span class='status'> Email</span></div>`;
 	var Container = document.getElementById("empdetails");
 	reims.forEach(emp =>{
@@ -21,6 +19,10 @@ document.addEventListener('DOMContentLoaded', async()=>{
 		<input type="submit" value="Update">
 	</form>`;
 		Container.appendChild(div);
+		//if( $('#div').is(':empty') ) {
+			if( $.trim( $('#div').html() ).length ) {
+		document.getElementById("sandbox").innerHTML = `${reims}${reimsResp} Must register in order to change employee details`;
+	}
 })
 	})
 	
