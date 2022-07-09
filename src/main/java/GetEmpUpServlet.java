@@ -49,6 +49,7 @@ public class GetEmpUpServlet extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		out.write(new ObjectMapper().writeValueAsString(employees));
+		//out.println("Must register first to Edit Employee Details");
 //		for(Employee e : employees) {
 //		out.println(e.getEmail()+e.getEmpAddress()+e.getEmpName()+e.getEmpPhone()+e.getUserId());
 //		}
