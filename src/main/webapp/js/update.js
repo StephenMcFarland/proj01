@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', async()=>{
 	const reimsResp = await fetch('http://localhost:8080/ReimbursementSystem/getEmpUp');
 	
-	const reims = await reimsResp.json();
+	const reims = await reimsResp.json();//.then(json => {
+		document.getElementById("sandbox").innerHTML = `${reims}${reimsResp} Must register in order to change employee details`;
+	
 	console.log(reims);
 	
 	document.getElementById("fieldnames").innerHTML = ``;//<div class='reimbursement'><span class='reimId'>id</span><span class='owner'> Name</span><span class='reimAmount'> Phone</span><span class='status'> Address</span><span class='status'> Email</span></div>`;
@@ -20,9 +22,10 @@ document.addEventListener('DOMContentLoaded', async()=>{
 	</form>`;
 		Container.appendChild(div);
 		//if( $('#div').is(':empty') ) {
-			if( $.trim( $('#div').html() ).length ) {
-		document.getElementById("sandbox").innerHTML = `${reims}${reimsResp} Must register in order to change employee details`;
-	}
+			//if( $.trim( $('#div').html() ).length ) {
+				//if("${emp.empName}"==""){
+		//document.getElementById("sandbox").innerHTML = `${reims}${reimsResp} Must register in order to change employee details`;
+	//}
 })
 	})
-	
+	//});
