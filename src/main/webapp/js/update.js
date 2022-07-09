@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', async()=>{
 	reims.forEach(emp =>{
 		var div = document.createElement("div");
 		div.classList.add('reimbursement');
-		div.innerHTML = `	<form method="get" action="update">
+		div.innerHTML = `<br>Must register first to update information.<br>	<form method="get" action="update">
 		${emp.userId} <input name="id" value="${emp.userId}" style="visibility:hidden;"/> <br/> 
 		Name: <input name="empName" size='30' value="${emp.empName}"/> <br/> 
 		Phone: <input name="empPhone" size='15' value="${emp.empPhone}"/> <br/> 
